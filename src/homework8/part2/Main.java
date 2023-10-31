@@ -12,12 +12,15 @@ public class Main {
         Printable[] printable = {giperion, vogue};
 
         for (Printable publication : printable) {
+
             publication.print();
 
             if (publication instanceof Book) {
+
                 ((Book)publication).printBooks();
             }
             else {
+
                 ((Magazine)publication).printMagazines();
             }
         }
