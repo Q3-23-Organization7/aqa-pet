@@ -2,14 +2,18 @@ package homework8.part2;
 
 public class Magazine implements Printable {
 
-    static String name;
+    private String name;
 
-    public static void setName(String name) {
-        Magazine.name = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
+    }
+
+    Magazine(String name) {
+        this.name = name;
     }
 
     @Override
@@ -17,7 +21,11 @@ public class Magazine implements Printable {
         System.out.println("print magazine");
     }
 
-    public static void printMagazines () {
-        System.out.println("magazine name: " + name);
+    public static void printMagazines (Printable[] printable) {
+        for (Printable publication : printable) {
+            if (publication instanceof Magazine) {
+                System.out.println("magazine name: " + ((Magazine) publication).getName());
+            }
+        }
     }
 }

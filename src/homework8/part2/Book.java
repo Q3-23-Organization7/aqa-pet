@@ -2,14 +2,18 @@ package homework8.part2;
 
 public class Book implements Printable {
 
-    static String name;
+    private String name;
 
-    public static void setName(String name) {
-        Book.name = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
+    }
+
+    Book(String name) {
+        this.name = name;
     }
 
     @Override
@@ -17,8 +21,12 @@ public class Book implements Printable {
         System.out.println("print book");
     }
 
-    public static void printBooks () {
-        System.out.println("book name: " + name);
+    public static void printBooks (Printable[] printable) {
+        for (Printable publication : printable) {
+            if (publication instanceof Book) {
+                System.out.println("book name: " + ((Book) publication).getName());
+            }
+        }
     }
 
 }
