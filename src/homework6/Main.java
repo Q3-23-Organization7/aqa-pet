@@ -12,4 +12,4 @@ public class Main {
         Calculator.division();
         Calculator.remainderOfdivision();
     }
-}git
+}
